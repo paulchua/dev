@@ -34,12 +34,22 @@
                 font-size: 96px;
             }
         </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
+    </head> {{ csrf_field() }}
+	<body>
+    <b>Dynamic Web Applications<br>
+	Project 3<br>
+	Paul Chua<br>
+	<HR>
+	Lorem Ipsum Generator<BR>
+	How many paragraphs do you want? (max:9) <BR>
+ <form method='POST' action='/lorem'>
+<input type='text' name='paragraphs' class="form-control" id='paragraphs' size="3">
+ <button type='submit' >Generate</button>
+        {{ csrf_field() }}
+	
+	
+	<HR>
+	Random User Generator<BR>
+	<HR>
     </body>
 </html>

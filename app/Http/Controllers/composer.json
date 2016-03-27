@@ -1,0 +1,5 @@
+{
+    "require": {
+        "badcow/lorem-ipsum": "^1.1"
+    }
+}
