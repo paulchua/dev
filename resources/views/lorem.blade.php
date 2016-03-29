@@ -19,7 +19,6 @@
         		<p><?php echo implode('<p>', $paragraphs); ?></p>
 			@endif
 	</div>
-
     </section>
 
 
