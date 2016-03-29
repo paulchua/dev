@@ -10,6 +10,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class LoremController extends Controller
 {
+	
+	    public function getIndex()
+    {
+        return view('lorem');
+    }
 
     public function postIndex(Request $request)
     {

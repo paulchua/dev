@@ -17,10 +17,7 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
 	
-	Route::get('/lorem', function () {
-	return view('lorem');
-    });
-	
+    Route::get('/lorem','LoremController@getIndex');
     Route::post('/lorem','LoremController@postIndex');
 
     Route::get('/user', function () {
