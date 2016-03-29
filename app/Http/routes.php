@@ -16,17 +16,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
         return view('welcome');
     });
+	
+	Route::get('/lorem', function () {
+	return view('lorem');
+    });
+	
+    Route::post('/lorem','LoremController@postIndex');
 
-Route::get('/lorem', function () {
-	return view('lorem');	
-
-Route::post('/lorem','LoremController@postIndex');
-
-});
-
-Route::get('/user', function () {
+    Route::get('/user', function () {
 	return view('fake');
-});
-Route::post('/user', 'FakeController@postIndex');
+    });
+
+	Route::post('/user', 'FakeController@postIndex');
+	
 }); 
 
