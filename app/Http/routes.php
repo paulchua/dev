@@ -20,5 +20,9 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::post('/lorem','LoremController@postIndex');
 
+Route::get('/user', function () {
+	return view('fake');
+});
+Route::post('/user', 'FakeController@postIndex');
 }); 
 

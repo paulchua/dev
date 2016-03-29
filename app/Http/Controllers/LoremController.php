@@ -16,7 +16,7 @@ class LoremController extends Controller
         $numParas = $request->input('paragraphs');
         $generator = new \Badcow\LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($numParas);
-        return $paragraphs;
+		return view('lorem')->with("paragraphs", $paragraphs);
     }
 
 }

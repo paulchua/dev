@@ -47,9 +47,46 @@
  <button type='submit' >Generate</button>
         {{ csrf_field() }}
 	
-	
+	</form>
 	<HR>
 	Random User Generator<BR>
+	 <form method="POST" action='/user#results'>
+           
+               <input type="hidden" value="{{ csrf_token() }}" name="_token">
+               <fieldset>
+                  <label>Number of users:</label>
+                  <input type='text' name='numUsers' class="form-control" id='numUsers' value =
+                     <?php 
+                        echo isset($_POST['numUsers']) ? $_POST['numUsers'] : '' 
+                        ?>
+                     >
+               @if(count($errors) > 0)
+                    @foreach ($errors->all() as $error)
+                       
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            {{ $error }}
+              
+                        @endforeach
+               @endif
+                  <label>Include email address: </label>
+                  <input type="checkbox" name="wantsEmail"
+                     <?php
+                        if (isset($_POST["wantsEmail"]))
+                            echo "checked";
+                        ?>
+                     >
+                  <br />
+                  <label>Include phone number: </label>
+                  <input type="checkbox" name="wantsPhone"
+                     <?php
+                        if (isset($_POST["wantsPhone"]))
+                            echo "checked";
+                        ?>
+                     > 
+               </fieldset>
+
+            <button type='submit'>Get Users</button>
+         </form>
 	<HR>
     </body>
 </html>
