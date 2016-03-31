@@ -9,6 +9,8 @@
 	Paul Chua<br>
 	<HR>
 	Lorem Ipsum Generator<BR>
+	Lorem Ipsum is simply dummy text of the printing and typesetting industry<BR>
+	This tool allows you to generate up to 9 paragraphs of this fake stuff.
 	How many paragraphs do you want? (max:9) <BR>
 <form method='POST' action='/lorem'>
 <input type='text' name='paragraphs' class="form-control" id='paragraphs' size="3">
@@ -16,6 +18,7 @@
  {{ csrf_field() }}
 </form>
 <HR>Random User Generator<BR>
+This Tool creats totally fake data like name, city, and state for test purposes.
 	 <form method="POST" action='/user#results'>
            
                <input type="hidden" value="{{ csrf_token() }}" name="_token">
