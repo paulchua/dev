@@ -3,7 +3,7 @@
 <body>
 <section>
 <h1>Your fake users have been generated:</h1>
-<BR><a href="http://dev.paulchua.xyz">Go Back</a><BR><BR><HR>
+<BR><a href="http://p3.paulchua.xyz">Go Back</a><BR><BR><HR>
         <?php
             if (isset($users))
                 foreach($users as $user) 
