@@ -1,34 +1,21 @@
-
 <!doctype html>
 <html>
-<head>
-</head>
 <body>
-
-
-
- <header>
-    </header>
-
-    <section>
-<h1>Your unique users have been created</h1> 
-        <?php 
+<section>
+<h1>Your fake users have been generated:</h1>
+<BR><a href="http://dev.paulchua.xyz">Go Back</a><BR><BR><HR>
+        <?php
             if (isset($users))
                 foreach($users as $user) 
                 {
                     echo "Name: " . $user['name'] . "  " . $user['lastName'] . "<br>";
-                    if (isset($user['email']))
-                    	echo "Email: " . $user['email'] . "<br>";
-                    if (isset($user['phoneNumber']))
-                    	echo "Phone Number: " . $user['phoneNumber'] . "<br>";
+                    if (isset($user['city']))
+                    	echo "City: " . $user['city'] . "<br>";
+                    if (isset($user['state']))
+                    	echo "State: " . $user['state'] . "<br>";
                    echo "<hr>";
                 }
         ?>
-
-    </section>
-
-
-
-
+</section>
 </body>
 </html>

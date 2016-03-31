@@ -12,19 +12,14 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-
     Route::get('/', function () {
         return view('welcome');
     });
-	
     Route::get('/lorem','LoremController@getIndex');
     Route::post('/lorem','LoremController@postIndex');
-
     Route::get('/user', function () {
 	return view('fake');
     });
-
 	Route::post('/user', 'FakeController@postIndex');
-	
 }); 
 

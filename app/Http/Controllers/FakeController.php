@@ -15,14 +15,14 @@ class FakeController extends Controller
     public function __construct() {}
     public function postIndex(Request $request) 
     {    
-        $this->validate($request, ['numUsers' => 'required|numeric|min:1|max:200']);
-        //creates fake information
+        $this->validate($request, ['numUsers' => 'required|numeric|min:1|max:50']);
+        //creates users
         $faker = \Faker\Factory::create();
-        //get form input fields
+        //get form info
 
 		$numUsers = \Input::get("numUsers");
-        $email = \Input::get("wantsEmail");
-        $phone = \Input::get("wantsPhone");  
+        $city = \Input::get("wantsCity");
+        $state = \Input::get("wantsState");  
         //creates the users array
         $users = Array();
 
@@ -32,19 +32,16 @@ class FakeController extends Controller
             $users[$i] = Array("name" => $faker->firstName);
 			
             $users[$i] = array_merge($users[$i], Array("lastName" => $faker->lastName));
-            if ($email) 
+            if ($city) 
             {
-                $users[$i] = array_merge($users[$i], Array("email" => $faker->email));
+                $users[$i] = array_merge($users[$i], Array("city" => $faker->city));
             };
-            if ($phone) 
+            if ($state) 
             {
-                $users[$i] = array_merge($users[$i], Array("phoneNumber" => $faker->phoneNumber));
+                $users[$i] = array_merge($users[$i], Array("state" => $faker->state));
             };
 			        
         }
-		
         return view('fake')->with("users", $users);
-
-
     }
 }

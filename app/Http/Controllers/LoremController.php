@@ -18,6 +18,7 @@ class LoremController extends Controller
 
     public function postIndex(Request $request)
     {
+		$this->validate($request, ['paragraphs' => 'required|numeric|min:1|max:9']);
         $numParas = $request->input('paragraphs');
         $generator = new \Badcow\LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($numParas);
