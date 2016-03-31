@@ -4,7 +4,7 @@ Paul Chua
 Task
 Create a web application called Developer's Best Friend which includes a Lorem Ipsum Generator and a Random User Generator.
 
-Project Site: dev.paulchua.xyz
+Project Site: http://dev.paulchua.xyz
 
 My Project has two parts:
 1) Lorem ipsum text generator using the package badcow/lorem-ipsum.
